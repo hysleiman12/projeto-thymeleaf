@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html">
+<head>
+<meta charset="ISO-8859-1">
+<title>Lista de Funcionarios</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h:form>
+
+		<ul class="navbar-dark bg-primary">	
+			<a class="navbar-brand" href="menu.xhtml"><h1>Lista de funcionarios cadastrados</h1></a><p></p>						
+		</ul>
+	</h:form>
+	
+	<table border="3">
+		<tr>
+			<td><b>ID</b></td>
+			<td><b>NOME</b></td>
+			<td><b>IDADE</b></td>
+		</tr>
+		<tr th:each="emp :${empList}"><!-- Itera sobre a lista de loginList -->
+			<td th:text="${emp?.id}">id</td>
+			<td th:text="${emp?.nome}">nome</td>
+			<td th:text="${emp?.age}">ano</td>
+		</tr>
+	</table>
+
+</body>
+</html>
